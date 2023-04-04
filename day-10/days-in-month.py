@@ -23,10 +23,13 @@
 #         print("Not leap year.")
 
 def is_leap(year):
+    """Check for leap year."""
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
 
 def days_in_month(year, month):
+    if month > 12 or month < 1:
+        return "Invalid input."
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     for day in month_days:
         if is_leap(year) and month == 2:
